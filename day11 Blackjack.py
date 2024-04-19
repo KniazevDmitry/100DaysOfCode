@@ -1,6 +1,5 @@
 import random
 
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 player_cards = []
 dealer_cards = []
 
@@ -12,6 +11,7 @@ end_game = False
 
 
 def deal_card(player, num):
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     for n in range(num):
         player.append(random.choice(cards))
 
