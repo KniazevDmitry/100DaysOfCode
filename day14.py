@@ -30,7 +30,10 @@ def next_round_accounts(account_winner):
     global entry_a
     global entry_b
     entry_a = account_winner
-    entry_b = random.choice(data)
+    new_entry = random.choice(data)
+    while new_entry == entry_a:
+        new_entry = random.choice(data)
+    entry_b = new_entry
 
 
 def play_game(score):
@@ -57,7 +60,6 @@ def play_game(score):
                 f"You're right! {entry_a['name']} has {entry_a['follower_count']} mln followers and {entry_b['name']} {entry_b['follower_count']} mln followers")
             winner_account = next_round_account_winner(player_guess, entry_a, entry_b)
             next_round_accounts(winner_account)
-            play_game(score)
 
         else:
             print(
