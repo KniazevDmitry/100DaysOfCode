@@ -19,13 +19,6 @@ def check_guess(letter, entry_a_followers, entry_b_followers):
             return True
 
 
-def next_round_account_winner(letter, account_a, account_b):
-    if letter == 'a':
-        return account_a
-    if letter == 'b':
-        return account_b
-
-
 def next_round_accounts(account_winner):
     global entry_a
     global entry_b
@@ -58,8 +51,10 @@ def play_game(score):
             score += 1
             print(
                 f"You're right! {entry_a['name']} has {entry_a['follower_count']} mln followers and {entry_b['name']} {entry_b['follower_count']} mln followers")
-            winner_account = next_round_account_winner(player_guess, entry_a, entry_b)
-            next_round_accounts(winner_account)
+            if player_guess == 'a':
+                next_round_accounts(entry_a)
+            else:
+                next_round_accounts(entry_b)
 
         else:
             print(
