@@ -44,7 +44,7 @@ def play_game(score):
         a_followers = entry_a['follower_count']
         b_followers = entry_b['follower_count']
 
-        player_guess = input("Who is more popular? Type 'a' or 'b': ")
+        player_guess = input("Who is more popular? Type 'a' or 'b': ").lower()
 
         result = check_guess(player_guess, a_followers, b_followers)
         if result:
