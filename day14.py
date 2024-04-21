@@ -11,12 +11,10 @@ continue_game = True
 
 
 def check_guess(letter, entry_a_followers, entry_b_followers):
-    if letter == 'a':
-        if entry_a_followers > entry_b_followers:
-            return True
-    if letter == 'b':
-        if entry_b_followers > entry_a_followers:
-            return True
+    if entry_a_followers > entry_b_followers:
+        return letter == 'a'
+    if entry_b_followers > entry_a_followers:
+        return letter == 'b'
 
 
 def next_round_accounts(account_winner):
