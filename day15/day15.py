@@ -52,8 +52,8 @@ def process_coffee(selected):
     if resource_check:
         price = MENU[selected]['cost']
         print(f"{selected} costs {price}$")
-        was_coffee_served = process_coins(price)
-        if was_coffee_served:
+        was_payment_accepted = process_coins(price)
+        if was_payment_accepted:
             print(f"Here's your {selected}, enjoy!")
             subtract_resources(selected)
             profit += price
