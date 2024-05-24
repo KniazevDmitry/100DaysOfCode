@@ -12,9 +12,9 @@ class Food(Turtle):
         self.color("white")
         self.penup()
         self.speed("fastest")
+        self.refresh()
 
+    def refresh(self):
         x_coordinate = random.randint(-14, 14) * 20
         y_coordinate = random.randint(-14, 14) * 20
-        print(f"x: {x_coordinate}, y: {y_coordinate}")
-
         self.goto(x_coordinate, y_coordinate)
