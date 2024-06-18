@@ -11,8 +11,8 @@ class Ball(Turtle):
         self.x_move = 2
         self.y_move = 2
 
-    def move(self, points_num):
-        speed_modifier = 1 + points_num / 5
+    def move(self, bounces):
+        speed_modifier = 1 + bounces / 8
         new_x = self.xcor() + self.x_move * speed_modifier
         new_y = self.ycor() + self.y_move * speed_modifier
         self.goto(new_x, new_y)
